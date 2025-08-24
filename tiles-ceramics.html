@@ -1,0 +1,200 @@
+<!DOCTYPE html> 
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pigments for Tiles & Ceramics - SWASTIQ CORPORATION</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --color-primary: #111827;
+      --color-accent: #3b82f6;
+      --color-accent-hover: #2563eb;
+      --font-family-main: 'Poppins', sans-serif;
+    }
+    body {
+      font-family: var(--font-family-main);
+      color: #374151;
+    }
+    h1,h2,h3,h4,h5,h6 { color: var(--color-primary); }
+    header { transition: background-color .4s, box-shadow .4s; }
+    header.scrolled {
+      background-color: rgba(255,255,255,.95);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / .1), 0 2px 4px -2px rgb(0 0 0 / .1);
+    }
+    .mobile-menu { display:none; background:rgba(255,255,255,.98); backdrop-filter: blur(5px);}
+    .mobile-menu.active { display:block; }
+    .reveal { opacity:0; transform:translateY(30px); transition:opacity .8s, transform .6s;}
+    .reveal.is-visible { opacity:1; transform:translateY(0);}
+    .download-btn {
+      display:inline-flex; align-items:center; gap:.5rem;
+      background:linear-gradient(to right,#1e2943,#111827);
+      color:white; padding:.5rem 1.5rem; border-radius:9999px;
+      font-weight:600; transition:all .3s;
+    }
+    .download-btn:hover { transform:translateY(-2px) scale(1.05); }
+    .service-hero {
+      background-image: linear-gradient(rgba(17,24,39,.75),rgba(17,24,39,.75)), url('https://images.unsplash.com/photo-1602776758175-9329d6215d14?auto=format&fit=crop&w=1770&q=80');
+      background-size: cover; background-position:center;
+    }
+    .service-hero-fallback { background:linear-gradient(135deg,#3b82f6,#111827);}
+  </style>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Header -->
+  <header class="fixed top-0 left-0 right-0 z-50 py-4 bg-white bg-opacity-90 shadow-md">
+    <nav class="container mx-auto flex justify-between items-center px-6">
+      <a href="index.html" class="flex items-center space-x-2 flex-shrink-0">
+        <img src="logo.png" alt="SWASTIQ CORPORATION Logo" class="h-10">
+        <span class="text-xl font-bold text-gray-800">SWASTIQ</span>
+      </a>
+      <div class="hidden md:flex items-center space-x-6">
+        <ul class="flex items-center space-x-6">
+          <li><a href="index.html#home" class="hover:text-blue-600 font-medium">Home</a></li>
+          <li><a href="index.html#about" class="hover:text-blue-600 font-medium">About</a></li>
+          <li><a href="index.html#services" class="hover:text-blue-600 font-medium">Products</a></li>
+          <li><a href="index.html#contact" class="hover:text-blue-600 font-medium">Contact</a></li>
+        </ul>
+        <a href="#" class="download-btn"><i class="fas fa-file-download"></i> Brochure</a>
+      </div>
+      <div class="md:hidden">
+        <button id="hamburger-button"><i class="fas fa-bars text-2xl"></i></button>
+      </div>
+    </nav>
+    <div id="mobile-menu" class="mobile-menu md:hidden shadow-lg">
+      <ul class="flex flex-col space-y-2 px-6 py-4">
+        <li><a href="index.html#home" class="block py-2">Home</a></li>
+        <li><a href="index.html#about" class="block py-2">About Us</a></li>
+        <li><a href="index.html#services" class="block py-2">Products</a></li>
+        <li><a href="index.html#contact" class="block py-2">Contact Us</a></li>
+        <li><a href="#" class="block download-btn text-center mt-4"><i class="fas fa-file-download"></i> Download Brochure</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="service-hero service-hero-fallback text-white pt-32 pb-20">
+    <div class="container mx-auto px-8 text-center reveal">
+      <h1 class="text-4xl md:text-6xl font-extrabold text-blue-300">Tiles & Ceramics</h1>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="py-20 lg:py-28 bg-gray-100">
+    <div class="container mx-auto px-6">
+      <div class="text-center mb-16 reveal">
+        <h2 class="text-4xl lg:text-5xl font-bold">Product Grades</h2>
+      </div>
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <!-- VVTi-Opati -->
+        <div class="bg-white p-8 rounded-lg shadow-lg reveal flex flex-col">
+          <h3 class="text-2xl font-bold mb-4">VVTi-Opati</h3>
+          <p class="text-gray-600 mb-6 flex-grow">VVTi OpaTi is a high-purity anatase TiO₂ with excellent tinting strength, neutral white tone, and is suitable for applications such as paints, plastics, rubber, tiles, and ceramics.</p>
+          <div class="mt-auto pt-4 border-t border-gray-200 flex space-x-4">
+            <a href="#" class="w-1/2 bg-blue-800 text-white text-center py-2 rounded-md hover:bg-blue-900"><i class="fas fa-download mr-2"></i>Data Sheet</a>
+            <a href="#contact" class="w-1/2 bg-gray-200 text-center py-2 rounded-md hover:bg-gray-300"><i class="fas fa-envelope mr-2"></i>Sample</a>
+          </div>
+        </div>
+
+        <!-- B101 Silvershine+ -->
+        <div class="bg-white p-8 rounded-lg shadow-lg reveal flex flex-col">
+          <h3 class="text-2xl font-bold mb-4">B101 Silvershine+</h3>
+          <p class="text-gray-600 mb-6 flex-grow">B101 Silvershine+ is a high-purity anatase TiO₂ that offers good tinting strength and a neutral white tone. Widely used in tiles and ceramics to ensure brightness, durability, and lasting shine.</p>
+          <div class="mt-auto pt-4 border-t border-gray-200 flex space-x-4">
+            <a href="#" class="w-1/2 bg-blue-800 text-white text-center py-2 rounded-md hover:bg-blue-900"><i class="fas fa-download mr-2"></i>Data Sheet</a>
+            <a href="#contact" class="w-1/2 bg-gray-200 text-center py-2 rounded-md hover:bg-gray-300"><i class="fas fa-envelope mr-2"></i>Sample</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-white">
+    <div class="container mx-auto px-6 text-center reveal">
+      <h2 class="text-3xl lg:text-4xl font-bold">Need More Information?</h2>
+      <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto mb-8">Contact our team to learn more about our pigments for tiles and ceramics, and how they can enhance your applications.</p>
+      <a href="#contact" class="download-btn"><i class="fas fa-envelope mr-2"></i> Get in Touch</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact" class="bg-gray-900 text-white pt-20 pb-8">
+    <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      <div class="lg:col-span-2">
+        <h3 class="text-2xl font-bold mb-4 text-white">SWASTIQ CORPORATION</h3>
+        <p class="text-gray-400 mb-6 max-w-md">Your premier partner for quality-driven pharmaceutical and chemical solutions worldwide.</p>
+        <div class="space-y-3 text-gray-300">
+          <p><i class="fas fa-phone-alt fa-fw mr-2 text-blue-400"></i> +91 79909 94921</p>
+          <p><i class="fas fa-envelope fa-fw mr-2 text-blue-400"></i> ankurbhut9303@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt fa-fw mr-2 text-blue-400"></i> The Capital, 1502-B, Sola, Ahmedabad, Gujarat 380060</p>
+        </div>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
+        <ul class="space-y-3">
+          <li><a href="index.html#home" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Home</a></li>
+          <li><a href="index.html#about" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">About Us</a></li>
+          <li><a href="index.html#services" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Products</a></li>
+          <li><a href="#contact" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3 class="text-xl font-semibold mb-4 text-white">Get in Touch</h3>
+        <form>
+          <input type="text" placeholder="Your Name" class="w-full p-3 mb-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition">
+          <input type="email" placeholder="Your Email" class="w-full p-3 mb-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition">
+          <textarea placeholder="Your Message" rows="3" class="w-full p-3 mb-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"></textarea>
+          <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition duration-300">Send Message</button>
+        </form>
+      </div>
+    </div>
+    <div class="text-center text-gray-500 mt-16 border-t border-gray-800 pt-8">
+      &copy; <span id="current-year"></span> SWASTIQ CORPORATION. All Rights Reserved.
+    </div>
+  </footer>
+
+  <script>
+    // --- Copyright Year ---
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+
+    // --- Hamburger Menu Toggle ---
+    const hamburgerButton = document.getElementById('hamburger-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburgerButton.addEventListener('click', () => {
+      mobileMenu.classList.toggle('active');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.remove('active'));
+    });
+
+    // --- Dynamic Header on Scroll ---
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // --- On-Scroll Reveal Animation ---
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+        }
+      });
+    }, { threshold: 0.1 });
+    revealElements.forEach(el => revealObserver.observe(el));
+  </script>
+</body>
+</html>

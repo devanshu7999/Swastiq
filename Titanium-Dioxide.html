@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Titanium Dioxide - SWASTIQ CORPORATION</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+    :root {
+        --color-primary: #111827; /* Dark Navy */
+        --color-accent: #3b82f6;  /* Blue Accent */
+        --color-accent-hover: #2563eb;
+        --font-family-main: 'Poppins', sans-serif;
+    }
+
+    body {
+        font-family: var(--font-family-main);
+        color: #374151; /* Gray-700 */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+        color: var(--color-primary);
+    }
+
+    /* --- Dynamic Header on Scroll --- */
+    header {
+        transition: background-color 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    }
+    header.scrolled {
+        background-color: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+    }
+    
+    /* --- Mobile Menu Styles --- */
+    .mobile-menu { display: none; background-color: rgba(255, 255, 255, 0.98); backdrop-filter: blur(5px); }
+    .mobile-menu.active { display: block; }
+
+    /* --- On-Scroll Reveal Animation --- */
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.6s ease-out; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    
+    .download-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: linear-gradient(to right, #1e2943, #111827);
+        color: white;
+        padding: 0.5rem 1.5rem;
+        border-radius: 9999px;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(59, 130, 246, 0.4);
+        transition: all 0.3s ease;
+    }
+    .download-btn:hover {
+        transform: translateY(-2px) scale(1.05);
+        box-shadow: 0 6px 14px rgba(59, 130, 246, 0.6);
+        background: linear-gradient(to right, #111827, #1e2943);
+    }
+
+    /* --- Service Page Hero --- */
+    .service-hero {
+        background-image: linear-gradient(rgba(17, 24, 39, 0.75), rgba(17, 24, 39, 0.75)), url('https://images.unsplash.com/photo-1574725230642-2751b14c50d3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80');
+        background-size: cover;
+        background-position: center;
+    }
+    .service-hero-fallback {
+        background: linear-gradient(135deg, #3b82f6, #111827);
+    }
+</style>
+</head>
+<body class="bg-gray-50">
+
+    <header class="fixed top-0 left-0 right-0 z-50 py-4 bg-white bg-opacity-90 shadow-md">
+        <nav class="container mx-auto flex justify-between items-center px-6">
+            <a href="index.html" class="flex items-center space-x-2 flex-shrink-0">
+                <img src="logo.png" alt="SWASTIQ CORPORATION Logo" class="h-10">
+                <span class="text-xl font-bold text-gray-800">SWASTIQ</span>
+            </a>
+
+            <div class="hidden md:flex items-center space-x-6">
+                <ul class="flex items-center space-x-6">
+                    <li><a href="index.html#home" class="text-gray-700 hover:text-blue-600 font-medium transition whitespace-nowrap">Home</a></li>
+                    <li><a href="index.html#about" class="text-gray-700 hover:text-blue-600 font-medium transition whitespace-nowrap">About</a></li>
+                    <li><a href="index.html#services" class="text-gray-700 hover:text-blue-600 font-medium transition whitespace-nowrap">Products</a></li>
+                    <li><a href="index.html#contact" class="text-gray-700 hover:text-blue-600 font-medium transition whitespace-nowrap">Contact</a></li>
+                </ul>
+                <a href="#" class="download-btn whitespace-nowrap"><i class="fas fa-file-download"></i> Brochure</a>
+            </div>
+
+            <div class="md:hidden flex items-center">
+                <button id="hamburger-button" class="text-gray-800 focus:outline-none">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </nav>
+        
+        <div id="mobile-menu" class="mobile-menu md:hidden shadow-lg">
+            <ul class="flex flex-col space-y-2 px-6 py-4">
+                <li><a href="index.html#home" class="block text-gray-700 hover:text-blue-600 py-2 font-medium">Home</a></li>
+                <li><a href="index.html#about" class="block text-gray-700 hover:text-blue-600 py-2 font-medium">About Us</a></li>
+                <li><a href="index.html#services" class="block text-gray-700 hover:text-blue-600 py-2 font-medium">Products</a></li>
+                <li><a href="index.html#contact" class="block text-gray-700 hover:text-blue-600 py-2 font-medium">Contact Us</a></li>
+                <li><a href="#" class="block download-btn text-center mt-4"><i class="fas fa-file-download"></i> Download Brochure</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="service-hero service-hero-fallback text-white pt-32 pb-20">
+            <div class="container mx-auto px-8 text-center reveal">
+                 <h1 class="text-4xl md:text-6xl font-extrabold text-blue-300 mb-0">Titanium Dioxide (TiO₂)</h1>
+            </div>
+        </section>
+
+        <!-- Product Overview Section -->
+        <section class="py-20 lg:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="reveal">
+                        <img src="Images/Titanium.jpg" alt="White powder of Titanium Dioxide" class="rounded-xl shadow-2xl w-full max-w-md mx-auto h-auto object-cover">
+                    </div>
+                    <div class="reveal">
+                        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-6">About Titanium Dioxide</h2>
+                        <p class="text-gray-600 mb-4 text-lg">Titanium Dioxide (TiO₂) is the most widely used white pigment in the world, prized for its exceptional brightness, high refractive index, and opacity. It is an inert, non-toxic mineral that provides whiteness and hiding power to a vast range of products.</p>
+                        <p class="text-gray-600 text-lg">At SWASTIQ CORPORATION, we supply high-quality Rutile and Anatase grades of Titanium Dioxide, ensuring superior performance, color consistency, and UV resistance for our clients in the paints, plastics, paper, and cosmetics industries.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Applications Section -->
+        <section id="applications" class="py-20 lg:py-28 bg-gray-100">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-4xl lg:text-5xl font-bold text-gray-900">Applications</h2>
+                    <p class="mt-4 text-lg text-gray-600 max-w-3xl mx-auto">Our Titanium Dioxide grades are tailored for performance across a wide spectrum of industrial and consumer applications.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
+                    
+                    <a href="paints.html" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden reveal">
+                        <div class="overflow-hidden"><img src="Images/Paints.jpg" alt="Paints" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"></div>
+                        <div class="p-4"><h3 class="text-lg font-semibold text-gray-800 text-center">Paints</h3></div>
+                    </a>
+                    <a href="plastics.html" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden reveal">
+                        <div class="overflow-hidden"><img src="Images/Plastics.jpg" alt="Plastics" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"></div>
+                        <div class="p-4"><h3 class="text-lg font-semibold text-gray-800 text-center">Plastics</h3></div>
+                    </a>
+                    <a href="inks.html" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden reveal">
+                        <div class="overflow-hidden"><img src="Images/Inks.jpeg" alt="Inks" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"></div>
+                        <div class="p-4"><h3 class="text-lg font-semibold text-gray-800 text-center">Inks</h3></div>
+                    </a>
+                    <a href="general-purpose-tio2.html" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden reveal">
+                        <div class="overflow-hidden"><img src="Images/Titanium-apk.jpeg" alt="General Purpose" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"></div>
+                        <div class="p-4"><h3 class="text-lg font-semibold text-gray-800 text-center">General Purpose</h3></div>
+                    </a>
+                    <a href="paper.html" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden reveal">
+                        <div class="overflow-hidden"><img src="Images/Paper.jpg" alt="Paper" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"></div>
+                        <div class="p-4"><h3 class="text-lg font-semibold text-gray-800 text-center">Paper</h3></div>
+                    </a>
+                    <a href="tiles-ceramics.html" class="group block bg-white rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden reveal">
+                        <div class="overflow-hidden"><img src="Images/Tiles.jpg" alt="Tiles & Ceramics" class="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-300"></div>
+                        <div class="p-4"><h3 class="text-lg font-semibold text-gray-800 text-center">Tiles & Ceramics</h3></div>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 bg-white">
+            <div class="container mx-auto px-6 text-center reveal">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">Looking for a Titanium Dioxide Supplier?</h2>
+                <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto mb-8">Contact our experts to discuss your specific needs for Rutile or Anatase grades, or to request a technical data sheet.</p>
+                <a href="#contact" class="download-btn">
+                    <i class="fas fa-envelope mr-2"></i> Get in Touch
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="bg-gray-900 text-white pt-20 pb-8">
+        <div class="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+            <div class="lg:col-span-2">
+                <h3 class="text-2xl font-bold mb-4 text-white">SWASTIQ CORPORATION</h3>
+                <p class="text-gray-400 mb-6 max-w-md">Your premier partner for quality-driven pharmaceutical and chemical solutions worldwide.</p>
+                <div class="space-y-3 text-gray-300">
+                    <p><i class="fas fa-phone-alt fa-fw mr-2 text-blue-400"></i> +91 79909 94921</p>
+                    <p><i class="fas fa-envelope fa-fw mr-2 text-blue-400"></i> ankurbhut9303@gmail.com</p>
+                    <p><i class="fas fa-map-marker-alt fa-fw mr-2 text-blue-400"></i> The Capital, 1502-B, Sola, Ahmedabad, Gujarat 380060</p>
+                </div>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
+                <ul class="space-y-3">
+                    <li><a href="index.html#home" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Home</a></li>
+                    <li><a href="index.html#about" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">About Us</a></li>
+                    <li><a href="index.html#services" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Products</a></li>
+                    <li><a href="index.html#contact" class="text-gray-400 hover:text-blue-400 transition-colors duration-300">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-xl font-semibold mb-4 text-white">Get in Touch</h3>
+                <form>
+                    <input type="text" placeholder="Your Name" class="w-full p-3 mb-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition">
+                    <input type="email" placeholder="Your Email" class="w-full p-3 mb-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition">
+                    <textarea placeholder="Your Message" rows="3" class="w-full p-3 mb-3 bg-gray-800 border border-gray-700 rounded-md text-white placeholder-gray-500 focus:outline-none focus:border-blue-500 focus:ring-1 focus:ring-blue-500 transition"></textarea>
+                    <button type="submit" class="w-full bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition duration-300">Send Message</button>
+                </form>
+            </div>
+        </div>
+        <div class="text-center text-gray-500 mt-16 border-t border-gray-800 pt-8">
+            &copy; <span id="current-year"></span> SWASTIQ CORPORATION. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        // --- Copyright Year ---
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // --- Hamburger Menu Toggle ---
+        const hamburgerButton = document.getElementById('hamburger-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        hamburgerButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+        });
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => mobileMenu.classList.remove('active'));
+        });
+
+        // --- Dynamic Header on Scroll ---
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            header.classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // --- On-Scroll Reveal Animation ---
+        const revealElements = document.querySelectorAll('.reveal');
+        const revealObserver = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        revealElements.forEach(el => revealObserver.observe(el));
+    </script>
+</body>
+</html>
